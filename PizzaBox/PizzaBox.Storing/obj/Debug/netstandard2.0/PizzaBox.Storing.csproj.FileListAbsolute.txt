@@ -1,0 +1,8 @@
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Storing/bin/Debug/netstandard2.0/PizzaBox.Storing.deps.json
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Storing/bin/Debug/netstandard2.0/PizzaBox.Storing.dll
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Storing/bin/Debug/netstandard2.0/PizzaBox.Storing.pdb
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Storing/obj/Debug/netstandard2.0/PizzaBox.Storing.csprojAssemblyReference.cache
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Storing/obj/Debug/netstandard2.0/PizzaBox.Storing.AssemblyInfoInputs.cache
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Storing/obj/Debug/netstandard2.0/PizzaBox.Storing.AssemblyInfo.cs
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Storing/obj/Debug/netstandard2.0/PizzaBox.Storing.dll
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Storing/obj/Debug/netstandard2.0/PizzaBox.Storing.pdb

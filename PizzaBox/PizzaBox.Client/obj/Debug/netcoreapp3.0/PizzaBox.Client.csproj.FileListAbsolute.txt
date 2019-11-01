@@ -1,0 +1,17 @@
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/bin/Debug/netcoreapp3.0/PizzaBox.Client
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/bin/Debug/netcoreapp3.0/PizzaBox.Client.deps.json
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/bin/Debug/netcoreapp3.0/PizzaBox.Client.runtimeconfig.json
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/bin/Debug/netcoreapp3.0/PizzaBox.Client.runtimeconfig.dev.json
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/bin/Debug/netcoreapp3.0/PizzaBox.Client.dll
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/bin/Debug/netcoreapp3.0/PizzaBox.Client.pdb
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/bin/Debug/netcoreapp3.0/PizzaBox.Domain.dll
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/bin/Debug/netcoreapp3.0/PizzaBox.Storing.dll
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/bin/Debug/netcoreapp3.0/PizzaBox.Domain.pdb
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/bin/Debug/netcoreapp3.0/PizzaBox.Storing.pdb
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/obj/Debug/netcoreapp3.0/PizzaBox.Client.csprojAssemblyReference.cache
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/obj/Debug/netcoreapp3.0/PizzaBox.Client.AssemblyInfoInputs.cache
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/obj/Debug/netcoreapp3.0/PizzaBox.Client.AssemblyInfo.cs
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/obj/Debug/netcoreapp3.0/PizzaBox.Client.csproj.CopyComplete
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/obj/Debug/netcoreapp3.0/PizzaBox.Client.dll
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/obj/Debug/netcoreapp3.0/PizzaBox.Client.pdb
+/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/bin/Debug/netcoreapp3.0/Newtonsoft.Json.dll

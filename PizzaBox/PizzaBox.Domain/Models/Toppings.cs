@@ -1,0 +1,3 @@
+namespace PizzaBox.Domain.Models {
+
+}
