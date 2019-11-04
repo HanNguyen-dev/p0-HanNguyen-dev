@@ -14,9 +14,6 @@
       "PizzaBox.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "PizzaBox.Storing": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/PizzaBox.Domain.dll": {}
         },
@@ -28,7 +25,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "12.0.2",
+          "PizzaBox.Domain": "1.0.0"
         },
         "compile": {
           "bin/placeholder/PizzaBox.Storing.dll": {}
@@ -83,7 +81,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
-      "PizzaBox.Domain >= 1.0.0"
+      "PizzaBox.Domain >= 1.0.0",
+      "PizzaBox.Storing >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -112,6 +111,9 @@
           "projectReferences": {
             "/home/han/revature_project/project_0/PizzaBox/PizzaBox.Domain/PizzaBox.Domain.csproj": {
               "projectPath": "/home/han/revature_project/project_0/PizzaBox/PizzaBox.Domain/PizzaBox.Domain.csproj"
+            },
+            "/home/han/revature_project/project_0/PizzaBox/PizzaBox.Storing/PizzaBox.Storing.csproj": {
+              "projectPath": "/home/han/revature_project/project_0/PizzaBox/PizzaBox.Storing/PizzaBox.Storing.csproj"
             }
           }
         }

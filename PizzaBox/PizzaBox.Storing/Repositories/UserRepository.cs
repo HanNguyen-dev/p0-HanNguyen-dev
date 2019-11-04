@@ -1,55 +1,53 @@
 using System;
-using System.IO;
 using System.Collections;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using PizzaBox.Domain.Models;
 
 
 namespace PizzaBox.Storing.Repositories {
 
   public class UserRepository
   {
-    private const string FILE = "PizzaBox.Storing/Repositories/users.json";
+    // private const string FILE = "PizzaBox.Storing/Repositories/users.json";
 
-    User one;
+    public static List<Account> accounts = new List<Account>();
+
+
+    public static void Create()
+    {
+      // List<Account> accounts = new List<Account>();
+
+      accounts.Add(new Account{username="cool", password="working", storeID=3, orderTime=new DateTime(2019, 11, 4, 18, 31, 0)});
+      accounts.Add(new Account{username="hot", password="working", storeID=1, orderTime=new DateTime(2019, 3, 1)});
+      accounts.Add(new Account{username="bob", password="working", storeID=2, orderTime=new DateTime(2019, 11, 3)});
+    }
 
     public static Hashtable readData()
     {
-      Hashtable userPass = new Hashtable();
 
-      StreamReader reader = new StreamReader(FILE);
-      List<Account> accounts = JsonConvert.DeserializeObject<List<Account>>(reader.ReadToEnd());
+      Hashtable userAccount = new Hashtable();
+
       foreach(Account account in accounts)
       {
-        userPass.Add(account.username, account.password);
+        userAccount.Add(account.username, account);
       }
 
-      return userPass;
+      return userAccount;
     }
 
     public static void writeData(Hashtable newUserPass)
     {
-      ICollection keys = newUserPass.Keys;
+      ICollection accounts = newUserPass.Values;
       List<Account> updatedList = new List<Account>();
 
-      foreach(string key in keys)
+      foreach(Account account in accounts)
       {
-        System.Console.WriteLine($"{key} - {newUserPass[key]}");
-        updatedList.Add( new Account{username=key, password=Convert.ToString(newUserPass[key], storeID=1, orderTime)} );
+        updatedList.Add(account);
       }
-      string jsonString = JsonConvert.SerializeObject(updatedList);
 
-      StreamWriter writer = new StreamWriter(FILE);
-      writer.Write(jsonString);
-      writer.Close();
+      accounts = updatedList;
+
     }
 
-    internal class Account
-    {
-      public string username { get; set; }
-      public string password { get; set; }
-      public int storeID { get; set; }
-      public DateTime orderTime { get; set; }
-    }
   }
 }

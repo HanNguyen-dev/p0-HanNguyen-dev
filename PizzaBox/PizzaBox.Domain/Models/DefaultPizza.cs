@@ -5,7 +5,7 @@ namespace PizzaBox.Domain.Models
 
     public DefaultPizza() {
       this.Size = "large";
-      this.Crust = "hand_tossed";
+      this.Crust = "hand-tossed";
       this.AddTopping("pepperoni");
       this.AddTopping("green_peppers");
     }

@@ -1,7 +1,7 @@
 using System;
 using System.IO;
-using System.Collections;
 using System.Collections.Generic;
+using PizzaBox.Domain.Models;
 using Newtonsoft.Json;
 
 
@@ -9,50 +9,42 @@ namespace PizzaBox.Storing.Repositories
 {
   public class OrderRepository
   {
-    private const string FILE = "PizzaBox.Storing/Repositories/orders.json";
+    // private const string FILE = "PizzaBox.Storing/Repositories/orders.json";
+    // private const string FILE_ORDERNUM = "PizzaBox.Storing/Repositories/order_number.txt";
 
-    public static Hashtable readData()
+    private static int order_number;
+    private static List<Transaction> transactions = new List<Transaction>();
+
+    public static void Create()
     {
-      Hashtable orderData = new Hashtable();
+      order_number = 4;
 
-      var theOrder = new Transaction{orderNum=1, user="han", location=3, pizzas=new List<string> {"wow", "cool"}, cost=10.22};
-      var jsonSting = JsonConvert.SerializeObject(theOrder);
-      Console.WriteLine(jsonSting);
+      // transactions = new List<Transaction>();
 
-      // StreamReader reader = new StreamReader(FILE);
-      // List<Account> accounts = JsonConvert.DeserializeObject<List<Account>>(reader.ReadToEnd());
-      // foreach(Account account in accounts)
-      // {
-      //   userPass.Add(account.username, account.password);
-      // }
-
-      return orderData;
+      transactions.Add(new Transaction{orderNum=1, user="cool", storeID=3, pizzas=new List<string>(){"small pan mushrooms"}, cost=3.5});
+      transactions.Add(new Transaction{orderNum=2, user="cool", storeID=2, pizzas=new List<string>(){"large pepperoni green_peppers","large thin black_olives mushrooms"}, cost=13.0});
+      transactions.Add(new Transaction{orderNum=3, user="hot", storeID=1, pizzas=new List<string>(){"large   pepperoni green_peppers","large hand-tossed  black_olives 	green_peppers mushrooms"}, cost=13.5});
+      transactions.Add(new Transaction{orderNum=4, user="bob", storeID=1, pizzas=new List<string>(){"small pan onions"}, cost=3.5});
+    }
+    public static int ReadOrderNum()
+    {
+      return order_number;
     }
 
-    public static void writeData(Hashtable newUserPass)
+    public static void StoreOrderNum(int nextOrderNumber)
     {
-      // ICollection keys = newUserPass.Keys;
-      // List<Account> updatedList = new List<Account>();
-
-      // foreach(string key in keys)
-      // {
-      //   System.Console.WriteLine($"{key} - {newUserPass[key]}");
-      //   updatedList.Add( new Account{username=key, password=Convert.ToString(newUserPass[key])} );
-      // }
-      // string jsonString = JsonConvert.SerializeObject(updatedList);
-
-      // StreamWriter writer = new StreamWriter(FILE);
-      // writer.Write(jsonString);
-      // writer.Close();
+      order_number = nextOrderNumber;
     }
 
-    internal class Transaction
+    public static List<Transaction> ReadData()
     {
-      public int orderNum { get; set; }
-      public string user { get; set; }
-      public int location { get; set; }
-      public List<string> pizzas { get; set; }
-      public double cost { get; set; }
+      return transactions;
     }
+
+    public static void WriteData(List<Transaction> orderData)
+    {
+      transactions = orderData;
+    }
+
   }
 }

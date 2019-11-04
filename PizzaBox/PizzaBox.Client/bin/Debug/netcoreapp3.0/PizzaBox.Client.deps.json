@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v3.0": {
       "PizzaBox.Client/1.0.0": {
         "dependencies": {
-          "PizzaBox.Domain": "1.0.0"
+          "PizzaBox.Domain": "1.0.0",
+          "PizzaBox.Storing": "1.0.0"
         },
         "runtime": {
           "PizzaBox.Client.dll": {}
@@ -23,16 +24,14 @@
         }
       },
       "PizzaBox.Domain/1.0.0": {
-        "dependencies": {
-          "PizzaBox.Storing": "1.0.0"
-        },
         "runtime": {
           "PizzaBox.Domain.dll": {}
         }
       },
       "PizzaBox.Storing/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.2"
+          "Newtonsoft.Json": "12.0.2",
+          "PizzaBox.Domain": "1.0.0"
         },
         "runtime": {
           "PizzaBox.Storing.dll": {}

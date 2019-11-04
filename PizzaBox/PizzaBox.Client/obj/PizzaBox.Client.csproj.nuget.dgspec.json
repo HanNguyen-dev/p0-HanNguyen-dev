@@ -27,6 +27,9 @@
             "projectReferences": {
               "/home/han/revature_project/project_0/PizzaBox/PizzaBox.Domain/PizzaBox.Domain.csproj": {
                 "projectPath": "/home/han/revature_project/project_0/PizzaBox/PizzaBox.Domain/PizzaBox.Domain.csproj"
+              },
+              "/home/han/revature_project/project_0/PizzaBox/PizzaBox.Storing/PizzaBox.Storing.csproj": {
+                "projectPath": "/home/han/revature_project/project_0/PizzaBox/PizzaBox.Storing/PizzaBox.Storing.csproj"
               }
             }
           }
@@ -78,11 +81,7 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "projectReferences": {
-              "/home/han/revature_project/project_0/PizzaBox/PizzaBox.Storing/PizzaBox.Storing.csproj": {
-                "projectPath": "/home/han/revature_project/project_0/PizzaBox/PizzaBox.Storing/PizzaBox.Storing.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -135,7 +134,11 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "/home/han/revature_project/project_0/PizzaBox/PizzaBox.Domain/PizzaBox.Domain.csproj": {
+                "projectPath": "/home/han/revature_project/project_0/PizzaBox/PizzaBox.Domain/PizzaBox.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

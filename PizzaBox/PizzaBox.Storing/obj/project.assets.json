@@ -34,6 +34,16 @@
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
+      },
+      "PizzaBox.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/PizzaBox.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PizzaBox.Domain.dll": {}
+        }
       }
     }
   },
@@ -211,12 +221,18 @@
         "newtonsoft.json.12.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
       ]
+    },
+    "PizzaBox.Domain/1.0.0": {
+      "type": "project",
+      "path": "../PizzaBox.Domain/PizzaBox.Domain.csproj",
+      "msbuildProject": "../PizzaBox.Domain/PizzaBox.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
-      "Newtonsoft.Json >= 12.0.2"
+      "Newtonsoft.Json >= 12.0.2",
+      "PizzaBox.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -242,7 +258,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/han/revature_project/project_0/PizzaBox/PizzaBox.Domain/PizzaBox.Domain.csproj": {
+              "projectPath": "/home/han/revature_project/project_0/PizzaBox/PizzaBox.Domain/PizzaBox.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

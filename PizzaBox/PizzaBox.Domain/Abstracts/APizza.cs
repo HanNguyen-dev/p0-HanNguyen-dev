@@ -18,8 +18,12 @@ namespace PizzaBox.Domain.Models
     public string Crust {
       get { return crust; }
       set {
-        if (value == "hand_tossed" || value == "pan" || value == "thin") {
-          crust = value;
+        if (value == "hand-tossed") {
+          crust = "hand-tossed";
+        } else if (value == "pan") {
+          crust = "pan";
+        } else if (value == "thin") {
+          crust = "thin";
         }
       }
     }
@@ -49,15 +53,30 @@ namespace PizzaBox.Domain.Models
       Toppings.Add("black_olives", .50);
       Toppings.Add("green_peppers", .50);
       Toppings.Add("mushrooms", .50);
-
     }
 
+    public bool CanAddTopping()
+    {
+      return myToppings.Count < 5;
+    }
+    public void ShowToppings()
+    {
+      Console.WriteLine($"Your pizza currently have {Convert.ToString(myToppings.Count)} toppings.");
+      if (myToppings.Count != 0) {
+        string toppingsString = "";
+        foreach(string top in myToppings)
+        {
+          toppingsString = toppingsString + " " + top;
+        }
+        Console.WriteLine(toppingsString);
+      }
+    }
     public void AddTopping(string topping)
     {
       if (myToppings.Count < 5) {
         myToppings.Add(topping);
       } else {
-        System.Console.WriteLine("You can only have a maximum of 5 toppings per pizza.");
+        Console.WriteLine("You can only have a maximum of 5 toppings per pizza.");
       }
       ComputeCost();
     }
@@ -70,6 +89,16 @@ namespace PizzaBox.Domain.Models
       }
       Console.WriteLine(myToppings.Count);
       Cost = baseCost + finalCost;
+    }
+    public override string ToString()
+    {
+      string stringTopping = "";
+
+      foreach (string top in myToppings)
+      {
+        stringTopping = stringTopping + " " + top;
+      }
+      return Size + " " + Crust + " " + stringTopping;
     }
   }
 }

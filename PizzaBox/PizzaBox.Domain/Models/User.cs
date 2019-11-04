@@ -1,21 +1,19 @@
 using System;
 using System.Collections;
-using PizzaBox.Storing.Repositories;
 using PizzaBox.Domain.Abstracts;
-
+using static PizzaBox.Domain.Delegates.UserRepoDelegate;
 
 namespace PizzaBox.Domain.Models
 {
   public class User : AUser
   {
-    private Hashtable users;
-    public string username { get; private set; }
-    public string password { get; private set; }
-    public int LastStore { get; set; }
-    public DateTime LastOrderTime { get; set; }
-    public User()
+    private Hashtable userAccounts;
+    public WriteDelegate WriteData;
+
+    public User(Hashtable userRepo, WriteDelegate WriteData)
     {
-      this.users = UserRepository.readData();
+      this.userAccounts = userRepo;
+      this.WriteData = WriteData;
     }
 
     public bool Login()
@@ -26,11 +24,14 @@ namespace PizzaBox.Domain.Models
       string inputPass = Console.ReadLine();
       Console.WriteLine();
 
-      if (users.ContainsKey(inputUser) && inputPass == Convert.ToString(users[inputUser]))
+      if (userAccounts.ContainsKey(inputUser))
       {
-        this.username = username;
-        this.password = password;
-        return true;
+        Account currentAccount = (Account) userAccounts[inputUser];
+        if (inputPass == currentAccount.password)
+        {
+          theAccount = currentAccount;
+          return true;
+        }
       }
       Console.WriteLine("Invalid username or password.  Please try again");
       return false;
@@ -41,20 +42,20 @@ namespace PizzaBox.Domain.Models
       Console.Write("Create a username: ");
       string newUser = Console.ReadLine();
 
-      if (users.ContainsKey(newUser))
+      if (userAccounts.ContainsKey(newUser))
       {
-        Console.WriteLine("Username already has been taken.\nPlease try again.");
+        Console.WriteLine("Username already has been taken.\nPlease try again.\n");
         return false;
       }
       Console.Write("Create a password: ");
       string newPassword = Console.ReadLine();
 
-      this.username = newUser;
-      this.password = newPassword;
-      users.Add(newUser, newPassword);
-      UserRepository.writeData(users);
-      // what to do with
-      Console.WriteLine("Please login with your new account");
+      Account newAccount = new Account{username=newUser, password=newPassword, storeID=0, orderTime=new DateTime(2019, 1, 1)};
+      theAccount = newAccount;
+      userAccounts.Add(newUser, newAccount);
+      WriteData(userAccounts);
+      // UserRepository.writeData(userAccounts);
+
       return true;
     }
 
@@ -67,14 +68,17 @@ namespace PizzaBox.Domain.Models
       }
       return false;
     }
-    public void ChangeLocation(int storeNumber)
+    public void ChangeStore(int storeNumber)
     {
-      LastStore = storeNumber;
+      theAccount.storeID = storeNumber;
     }
-    public bool CompleteOrder()
+    public void CompleteOrder()
     {
       LastOrderTime = DateTime.Now;
-      return true;
+      userAccounts[this.username] = this.theAccount;
+
+      WriteData(userAccounts);
+      // return true;
     }
   }
 }
