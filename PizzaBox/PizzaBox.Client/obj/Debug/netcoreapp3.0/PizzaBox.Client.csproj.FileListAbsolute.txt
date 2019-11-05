@@ -14,4 +14,3 @@
 /home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/obj/Debug/netcoreapp3.0/PizzaBox.Client.csproj.CopyComplete
 /home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/obj/Debug/netcoreapp3.0/PizzaBox.Client.dll
 /home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/obj/Debug/netcoreapp3.0/PizzaBox.Client.pdb
-/home/han/revature_project/project_0/PizzaBox/PizzaBox.Client/bin/Debug/netcoreapp3.0/Newtonsoft.Json.dll

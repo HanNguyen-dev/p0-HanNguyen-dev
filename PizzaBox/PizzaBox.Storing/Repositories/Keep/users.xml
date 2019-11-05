@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfAccount xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Account>
+    <username>cool</username>
+    <password>working</password>
+    <storeID>3</storeID>
+    <orderTime>2019-11-04T18:31:00</orderTime>
+  </Account>
+  <Account>
+    <username>hot</username>
+    <password>working</password>
+    <storeID>1</storeID>
+    <orderTime>2019-03-01T00:00:00</orderTime>
+  </Account>
+  <Account>
+    <username>bob</username>
+    <password>working</password>
+    <storeID>2</storeID>
+    <orderTime>2019-11-03T00:00:00</orderTime>
+  </Account>
+</ArrayOfAccount>

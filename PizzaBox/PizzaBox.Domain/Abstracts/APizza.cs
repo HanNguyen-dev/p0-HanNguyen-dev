@@ -1,7 +1,8 @@
 using System;
 using System.Collections;
+using PizzaBox.Domain.Interfaces;
 
-namespace PizzaBox.Domain.Models
+namespace PizzaBox.Domain.Abstracts
 {
   public abstract class APizza : IFood
   {

@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using PizzaBox.Domain.Models;
+using PizzaBox.Storing.Connectors;
 
 
 namespace PizzaBox.Storing.Repositories {
 
   public class UserRepository
   {
-    // private const string FILE = "PizzaBox.Storing/Repositories/users.json";
+    // private const string FILE = "PizzaBox.Storing/Repositories/users.xml";
 
     public static List<Account> accounts = new List<Account>();
 
@@ -26,6 +27,7 @@ namespace PizzaBox.Storing.Repositories {
     {
 
       Hashtable userAccount = new Hashtable();
+      accounts = UserFileConnector.ReadXml();
 
       foreach(Account account in accounts)
       {
@@ -45,7 +47,8 @@ namespace PizzaBox.Storing.Repositories {
         updatedList.Add(account);
       }
 
-      accounts = updatedList;
+      // accounts = updatedList;
+      UserFileConnector.WriteXml(updatedList);
 
     }
 

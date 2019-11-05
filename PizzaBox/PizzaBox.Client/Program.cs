@@ -14,8 +14,8 @@ namespace PizzaBox.Client
     {
       // Loading data from repository
 
-      UserRepository.Create();
-      OrderRepository.Create();
+      // UserRepository.Create();
+      // OrderRepository.Create();
 
       Hashtable usersData = UserRepository.readData();
       string[] storesData = StoreRepository.stores;
@@ -77,7 +77,6 @@ namespace PizzaBox.Client
           option = false;
         }
       }
-
 
     }
   }

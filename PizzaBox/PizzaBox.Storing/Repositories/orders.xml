@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTransaction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Transaction>
+    <orderNum>1</orderNum>
+    <user>cool</user>
+    <storeID>3</storeID>
+    <pizzas>
+      <string>small pan mushrooms</string>
+    </pizzas>
+    <cost>3.5</cost>
+  </Transaction>
+  <Transaction>
+    <orderNum>2</orderNum>
+    <user>cool</user>
+    <storeID>2</storeID>
+    <pizzas>
+      <string>large pepperoni green_peppers</string>
+      <string>large thin black_olives mushrooms</string>
+    </pizzas>
+    <cost>13</cost>
+  </Transaction>
+  <Transaction>
+    <orderNum>3</orderNum>
+    <user>hot</user>
+    <storeID>1</storeID>
+    <pizzas>
+      <string>large   pepperoni green_peppers</string>
+      <string>large hand-tossed  black_olives 	green_peppers mushrooms</string>
+    </pizzas>
+    <cost>13.5</cost>
+  </Transaction>
+  <Transaction>
+    <orderNum>4</orderNum>
+    <user>bob</user>
+    <storeID>1</storeID>
+    <pizzas>
+      <string>small pan onions</string>
+    </pizzas>
+    <cost>3.5</cost>
+  </Transaction>
+</ArrayOfTransaction>

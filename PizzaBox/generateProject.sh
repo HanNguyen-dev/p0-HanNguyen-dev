@@ -8,7 +8,6 @@ dotnet new xunit --name PizzaBox.Testing
 
 dotnet add PizzaBox.Client/PizzaBox.Client.csproj reference PizzaBox.Domain/PizzaBox.Domain.csproj
 dotnet add PizzaBox.Domain/PizzaBox.Domain.csproj reference PizzaBox.Storing/PizzaBox.Storing.csproj
-dotnet add PizzaBox.Storing/Pizza.Storing.csproj package Newtonsoft.Json
 
 dotnet add PizzaBox.Testing/PizzaBox.Testing.csproj package coverlet.msbuild
 dotnet add PizzaBox.Testing/PizzaBox.Testing.csproj package moq

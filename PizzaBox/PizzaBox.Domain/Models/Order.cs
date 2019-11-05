@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using PizzaBox.Domain.Abstracts;
+using PizzaBox.Domain.Factories;
 using static PizzaBox.Domain.Delegates.OrderRepoDelegate;
 
 namespace PizzaBox.Domain.Models
@@ -16,6 +17,7 @@ namespace PizzaBox.Domain.Models
     public ReadOrderNumberDelegate readOrderNumber;
     public WriteOrderNumberDelegate writeOrderNumber;
     public WriteDelegate writeData;
+    private PizzaFactory pizzaFactory;
 
     public Order(User user, Store store, List<Transaction> orderRepo, ReadOrderNumberDelegate readOrderNumber, WriteOrderNumberDelegate writeOrderNumber, WriteDelegate writeData)
     {
@@ -28,6 +30,8 @@ namespace PizzaBox.Domain.Models
       this.readOrderNumber = readOrderNumber;
       this.writeOrderNumber = writeOrderNumber;
       this.writeData = writeData;
+
+      pizzaFactory = new PizzaFactory();
     }
 
     public bool StartOrder()
@@ -97,12 +101,17 @@ namespace PizzaBox.Domain.Models
     }
 
     public APizza AddDefaultPizza() {
-      DefaultPizza one = new DefaultPizza();
+      // DefaultPizza one = new DefaultPizza();
+      APizza one = pizzaFactory.Create<DefaultPizza>();
+
       return one;
     }
 
     public CustomPizza AddCustomPizza() {
-      CustomPizza thePizza = new CustomPizza();
+      // CustomPizza thePizza = new CustomPizza();
+      APizza thePizzaProduct = pizzaFactory.Create<CustomPizza>();
+      CustomPizza thePizza = (CustomPizza) thePizzaProduct;
+
       thePizza.BuildPizza();
       return thePizza;
     }

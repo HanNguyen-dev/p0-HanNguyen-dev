@@ -1,4 +1,4 @@
-namespace PizzaBox.Domain.Models
+namespace PizzaBox.Domain.Interfaces
 {
   public interface IFood
   {

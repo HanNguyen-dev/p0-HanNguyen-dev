@@ -2,15 +2,13 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using PizzaBox.Domain.Models;
-using Newtonsoft.Json;
-
+using PizzaBox.Storing.Connectors;
 
 namespace PizzaBox.Storing.Repositories
 {
   public class OrderRepository
   {
-    // private const string FILE = "PizzaBox.Storing/Repositories/orders.json";
-    // private const string FILE_ORDERNUM = "PizzaBox.Storing/Repositories/order_number.txt";
+    private const string FILE_ORDERNUM = "PizzaBox.Storing/Repositories/order_number.txt";
 
     private static int order_number;
     private static List<Transaction> transactions = new List<Transaction>();
@@ -25,25 +23,39 @@ namespace PizzaBox.Storing.Repositories
       transactions.Add(new Transaction{orderNum=2, user="cool", storeID=2, pizzas=new List<string>(){"large pepperoni green_peppers","large thin black_olives mushrooms"}, cost=13.0});
       transactions.Add(new Transaction{orderNum=3, user="hot", storeID=1, pizzas=new List<string>(){"large   pepperoni green_peppers","large hand-tossed  black_olives 	green_peppers mushrooms"}, cost=13.5});
       transactions.Add(new Transaction{orderNum=4, user="bob", storeID=1, pizzas=new List<string>(){"small pan onions"}, cost=3.5});
+
     }
     public static int ReadOrderNum()
     {
+      StreamReader reader = new StreamReader(FILE_ORDERNUM);
+      string fileInput = reader.ReadToEnd();
+      if (int.TryParse(fileInput, out order_number))
+      {
+        return order_number;
+      }
       return order_number;
     }
 
     public static void StoreOrderNum(int nextOrderNumber)
     {
-      order_number = nextOrderNumber;
+      StreamWriter writer = new StreamWriter(FILE_ORDERNUM);
+      string intString = Convert.ToString(nextOrderNumber);
+      writer.Write(intString);
+      writer.Close();
+
+      // order_number = nextOrderNumber;
     }
 
     public static List<Transaction> ReadData()
     {
+      transactions = OrderFileConnector.ReadXml();
       return transactions;
     }
 
     public static void WriteData(List<Transaction> orderData)
     {
-      transactions = orderData;
+      OrderFileConnector.WriteXml(orderData);
+      // transactions = orderData;
     }
 
   }
