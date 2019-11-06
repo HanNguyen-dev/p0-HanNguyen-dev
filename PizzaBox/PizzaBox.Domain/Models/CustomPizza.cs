@@ -92,7 +92,7 @@ namespace PizzaBox.Domain.Models
       if (CanAddTopping()) {
         Console.WriteLine("Would you like to add topping to your pizza? You are allowed to have five.");
         ShowToppings();
-        Console.WriteLine("[0] Pepperoni (+$1.50)\n[1] Bacon (+$1.50)\n[2] Sausage (+$1.50)\n[3] Black Olives (+$0.50)\n[4] Green Peppers (+$0.50)\n[5] Mushrooms (+$0.50)\n[6] None");
+        Console.WriteLine("[0] Pepperoni (+$1.50)\n[1] Bacon (+$1.50)\n[2] Sausage (+$1.50)\n[3] Black Olives (+$0.50)\n[4] Green Peppers (+$0.50)\n[5] Mushrooms (+$0.50)\n[6] Done");
         int selection;
         string inputString = Console.ReadLine();
         if (int.TryParse(inputString, out selection)) {

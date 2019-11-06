@@ -7,7 +7,7 @@ namespace PizzaBox.Domain.Abstracts
 {
   public abstract class AUser : IAccount
   {
-    protected Account theAccount;
+    public Account theAccount;
     public string username
     { get { return theAccount.username; } }
     public string password

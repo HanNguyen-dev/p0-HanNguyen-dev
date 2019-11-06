@@ -38,15 +38,16 @@ namespace PizzaBox.Client
           inputValue = 4;
         }
 
-        User currentUser = new User(usersData, UserRepository.writeData);
+        UserClient currentUser = new UserClient(usersData);//, UserRepository.writeData);
         Store currentStore = new Store(storesData);
-        Order currentOrder = new Order(currentUser, currentStore, ordersData, OrderRepository.ReadOrderNum, OrderRepository.StoreOrderNum, OrderRepository.WriteData);
+        OrderClient currentOrder = new OrderClient(currentUser, currentStore, ordersData);//, OrderRepository.ReadOrderNum, OrderRepository.StoreOrderNum, OrderRepository.WriteData);
 
         /**************
          * User Login *
          **************/
         if (inputValue == 0) {
           if (currentUser.Login()) {
+          // if (Login(currentUser)) {
             currentUser.ViewOrderHistory(currentOrder.GetOrders());
             if (currentUser.CanChangeStore()) {
               currentStore.SelectStore();
@@ -77,7 +78,54 @@ namespace PizzaBox.Client
           option = false;
         }
       }
-
     }
+
+    // public static bool Login(User user)
+    // {
+    //   Console.Write("Enter your username: ");
+    //   string inputUser = Console.ReadLine();
+    //   Console.Write("Enter your password: ");
+    //   string inputPass = Console.ReadLine();
+    //   Console.WriteLine();
+
+    //   Account currentAccount = UserRepository.FindByUsername(inputUser);
+    //   if (currentAccount != null)
+    //   {
+    //     // Account currentAccount = (Account) userAccounts[inputUser];
+    //     if (inputPass == currentAccount.password)
+    //     {
+    //       user.theAccount = currentAccount;
+    //       return true;
+    //     }
+    //   }
+    //   Console.WriteLine("Invalid username or password.  Please try again");
+    //   return false;
+    // }
+
+    // public static bool CreateAccount(User user, Hashtable userAccounts)
+    // {
+    //   Console.Write("Create a username: ");
+    //   string newUser = Console.ReadLine();
+
+    //   Account currentAccount = UserRepository.FindByUsername(newUser);
+
+    //   if (currentAccount != null)
+    //   {
+    //     Console.WriteLine("Username already has been taken.\nPlease try again.\n");
+    //     return false;
+    //   }
+    //   Console.Write("Create a password: ");
+    //   string newPassword = Console.ReadLine();
+
+    //   Account newAccount = new Account{username=newUser, password=newPassword, storeID=0, orderTime=new DateTime(2019, 1, 1)};
+    //   user.theAccount = newAccount;
+    //   userAccounts.Add(newUser, newAccount);
+    //   // WriteData(userAccounts);
+    //   UserRepository.writeData(userAccounts);
+
+    //   return true;
+    // }
+
+
   }
 }
